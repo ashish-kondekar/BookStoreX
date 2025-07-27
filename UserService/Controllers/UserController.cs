@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Shared.Models.DTOs.Common;
-using Shared.Models.DTOs.Requests;
-using Shared.Models.DTOs.Responses;
-using System.Net;
-
-namespace UserService.Controllers;
+﻿namespace UserService.Controllers;
 
 [ApiController]
 [Route("api/[controller]s")]

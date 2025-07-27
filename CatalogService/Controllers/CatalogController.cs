@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Shared.Models.DTOs.Common;
-using Shared.Models.DTOs.Requests;
-using Shared.Models.DTOs.Responses;
-using System.Net;
+﻿using Microsoft.AspNetCore.Authorization;
 
 namespace CatalogService.Controllers;
 
+[Authorize(Policy = "AdminOnly")]
 [ApiController]
 [Route("api/[controller]s")]
 public class CatalogController : ControllerBase
