@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Shared.Models.DTOs.Common;
-using Shared.Models.DTOs.Requests;
-using Shared.Models.DTOs.Responses;
-using System.Net;
-
-namespace CatalogService.Controllers;
+﻿namespace CatalogService.Controllers;
 
 [ApiController]
 [Route("api/[controller]s")]

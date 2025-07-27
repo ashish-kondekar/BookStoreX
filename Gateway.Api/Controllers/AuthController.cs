@@ -1,7 +1,4 @@
-﻿using Gateway.Api.Services;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Gateway.Api.Controllers;
+﻿namespace Gateway.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
