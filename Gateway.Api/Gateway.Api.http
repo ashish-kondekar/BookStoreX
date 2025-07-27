@@ -1,0 +1,44 @@
+@Gateway.Api_HostAddress = https://localhost:7033
+
+### Get all users
+GET {{Gateway.Api_HostAddress}}/health
+Accept: application/json
+
+### Get all users
+GET {{Gateway.Api_HostAddress}}/api/users
+Accept: application/json
+
+### Get user by id
+GET {{Gateway.Api_HostAddress}}/api/users/1
+Accept: application/json
+
+### Add new user
+POST {{Gateway.Api_HostAddress}}/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "role": "User"
+}
+
+### Get all catalogs
+GET {{Gateway.Api_HostAddress}}/api/catalogs
+Accept: application/json
+
+### Get catalog by id
+GET {{Gateway.Api_HostAddress}}/api/catalogs/1
+Accept: application/json
+
+### Add new catalog
+POST {{Gateway.Api_HostAddress}}/api/catalogs
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 4,
+  "name": "Furniture",
+  "description": "All kinds of furniture."
+}
