@@ -1,5 +1,8 @@
-﻿namespace CatalogService.Controllers;
+﻿using Microsoft.AspNetCore.Authorization;
 
+namespace CatalogService.Controllers;
+
+[Authorize(Policy = "AdminOnly")]
 [ApiController]
 [Route("api/[controller]s")]
 public class CatalogController : ControllerBase

@@ -2,14 +2,9 @@
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthController : ControllerBase
+public class AuthController(ITokenService tokenService) : ControllerBase
 {
-    private readonly ITokenService _tokenService;
-
-    public AuthController(ITokenService tokenService)
-    {
-        _tokenService = tokenService;
-    }
+    private readonly ITokenService _tokenService = tokenService;
 
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginRequest request)
@@ -17,7 +12,7 @@ public class AuthController : ControllerBase
         // 🔐 Replace with actual DB/auth validation
         if (request.Username == "admin" && request.Password == "admin123")
         {
-            var token = _tokenService.GenerateToken(request.Username, "Admin", "tenant-abc");
+            var token = _tokenService.GenerateToken(request.Username, request.Role);
             return Ok(new { token });
         }
 
@@ -25,4 +20,4 @@ public class AuthController : ControllerBase
     }
 }
 
-public record LoginRequest(string Username, string Password);
+public record LoginRequest(string Username, string Password, string Role);
